@@ -4,4 +4,4 @@
 *Using dependencies:*
 
  - Express; EJS; Sequelize; Express-Session; BCrypt for Hash Password;
-   Also used: MySql DB Bootstrap TinyMCE (Text Editor)
+   Also used: MySql DB; Bootstrap; TinyMCE (Text Editor)
