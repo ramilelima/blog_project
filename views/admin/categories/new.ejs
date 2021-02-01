@@ -1,0 +1,25 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/adminNavbar.ejs'); -%>
+    <div class="container">
+        <style rel="stylesheet">
+            body {
+              background-image: url("/img/background.png");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-position: center center;
+              background-size: cover;
+            }
+          </style>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2> Category registration </h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/categories/save">
+                    <input class="form-control" type="text" name="title" placeholder="Set the category title"><br>
+                    <button class="btn btn-outline-success"> Register </button>
+                </form>
+        </div>
+    </div>
+<%- include('../../partials/footer.ejs'); -%>

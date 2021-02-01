@@ -1,0 +1,29 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/navbar.ejs'); -%>
+
+<div class="container">
+  <style rel="stylesheet">
+    body {
+      background-image: url("/img/background.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      background-size: cover;
+    }
+  </style>
+  <hr>
+  <div class="card mt-4">
+    <div class="card-header">
+      Log in using your username and password
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/authenticate">
+        <input class="form-control" name="email" type="email" placeholder="email@example.com"><br>
+        <input class="form-control" name="password" type="password" placeholder="********"><br>
+          <button type="submit" class="btn btn-outline-success">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../../partials/footer.ejs'); -%>

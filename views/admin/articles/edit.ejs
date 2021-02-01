@@ -1,0 +1,37 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/adminNavbar.ejs'); -%>
+    <div class="container">
+        <style rel="stylesheet">
+            body {
+              background-image: url("/img/background.png");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-position: center center;
+              background-size: cover;
+            }
+          </style>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2>Edite Article:</h2><hr>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/articles/update">
+                    <input class="form-control" type="text" name="title" value="<%= articles.title %>"><br>
+                    <textarea class="form-control" name="body" id="article"><%= articles.body %></textarea>
+                    <input type="hidden" name="id" value="<%= articles.id %>">
+                    <label> Category: </label>
+                        <select name="category" class="form-control">
+                            <% categories.forEach((category)=> { %>
+                                <% if(category.id === articles.categoryId) { %>
+                                    <option value="<%= category.id %>" selected> <%= category.title %> </option>       
+                                <% } else { %>
+                                    <option value="<%= category.id %>"> <%= category.title %></option>
+                                <% } %>                                
+                                <% }) %>
+                        </select><br>
+                        <button class="btn btn-success"> Update </button>
+                </form>
+        </div>
+    </div>
+<%- include('../../partials/footer.ejs'); -%>

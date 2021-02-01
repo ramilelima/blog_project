@@ -1,0 +1,27 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/adminNavbar.ejs'); -%>
+
+<div class="container">
+    <style rel="stylesheet">
+        body {
+            background-image: url("/img/background.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+    <hr>
+    <div class="card">
+        <div class="card-header">
+        <h2>Administrative panel</h2>
+        <hr>
+        </div>
+        <div class="card-body">
+            <a class="btn btn-outline-success" href="/admin/users/create">Create a new user</a>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../../partials/footer.ejs'); -%>

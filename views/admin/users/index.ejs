@@ -1,0 +1,66 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/adminNavbar.ejs'); -%>
+
+<div class="container">
+    <style rel="stylesheet">
+        body {
+            background-image: url("/img/background.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
+    <hr>
+    <div class="card">
+        <div class="card-header">
+        <h2>Administrative Panel</h2>
+        <a class="btn btn-outline-success" href="/admin/users/create">Create a new user</a>
+        <hr>
+        </div>
+        <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User - ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <th>
+                            <%= user.id %>
+                        </th>
+                        <th>
+                            <%= user.name %>
+                        </th>
+                        <th>
+                            <%= user.email %>
+                        </th>
+                        <th>
+                            <form method="POST" action="/user/delete" style="display: inline;" onsubmit="deleteAttetion(event, this)">
+                                <input type="hidden" name="id" value="<%= user.id %>">
+                                <button class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </th>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('../../partials/footer.ejs'); -%>
+
+<script>
+    function deleteAttetion(event, form){
+        event.preventDefault();
+        var decision = confirm("Do you really want to delete this user?");
+        if(decision) {
+            form.submit();
+        } 
+    }
+</script>

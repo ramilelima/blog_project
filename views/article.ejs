@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs'); -%>
+<%- include('partials/homenavbar.ejs'); -%>
+<body>
+  <div class="container">
+    <style rel="stylesheet">
+      body {
+        background-image: url("/img/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+      }
+    </style>
+    <hr>
+        <div class="card">
+          <div class="card-header">
+            <h4><%= articles.title %></h4>
+          </div>
+          <div class="card-body">
+              <%- articles.body %>
+          </div>
+        </div>
+        <br>
+  </div>
+
+  </body>
+
+<%- include('partials/footer.ejs'); -%>

@@ -1,0 +1,34 @@
+<%- include('../../partials/header.ejs'); -%>
+<%- include('../../partials/adminNavbar.ejs'); -%>
+    <div class="container">
+        <style rel="stylesheet">
+            body {
+              background-image: url("/img/background.png");
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-position: center center;
+              background-size: cover;
+            }
+          </style>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                <h2> New Article </h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/articles/save">
+                    <input class="form-control" type="text" name="title" placeholder="Set the article title"><br>
+                    <textarea class="form-control" placeholder="Write your article here" name="body" id="article"></textarea><br>
+                        <label> Select category: </label>
+                        <select name="category" class="form-control">
+                            <% categories.forEach((category)=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.title %>
+                                </option>
+                                <% }) %>
+                        </select><br>
+                        <button class="btn btn-success"> Register </button>
+                </form>
+        </div>
+    </div>
+<%- include('../../partials/footer.ejs'); -%>

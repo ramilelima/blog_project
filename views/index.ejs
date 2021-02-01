@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs'); -%>
+<%- include('partials/homeNavbar.ejs'); -%>
+<body>
+  <div class="container">
+    <style rel="stylesheet">
+      body {
+        background-image: url("/img/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+      }
+    </style>
+    <hr>
+    <% articles.forEach(articles => { %>
+        <div class="card">
+          <div class="card-header">
+            <h5><%= articles.title %></h5>
+          </div>
+          <div class="card-body">
+            <a href="/<%= articles.slug %>" class="btn btn-outline-success">Read Article</a>
+          </div>
+        </div>
+        <br>
+      <% }) %>
+      <div class="card">
+        <div class="col col-12">
+          <a style="float:right" href="/articles/page/2">Next >>> </a>
+        </div>
+      </div>
+        <br>
+  </div>
+
+  </body>
+
+<%- include('partials/footer.ejs'); -%>
